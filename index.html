@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekai Bellevue | Bellevue College Cosplay Club</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bc: {
+                            blue: '#002B49',
+                            gold: '#C5A059',
+                            softblue: '#E8F1F5',
+                            cardbg: '#FFFFFF',
+                            textdark: '#1E293B',
+                            muted: '#64748B',
+                            pastelpurple: '#F3E8FF',
+                            pastelpink: '#FCE7F3',
+                            pastelblue: '#E0F2FE',
+                            pastelgreen: '#DCFCE7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bc-softblue text-bc-textdark relative min-h-screen selection:bg-bc-gold/30 selection:text-bc-blue">
 
+    <!-- Soft Ambient Floating Petals Canvas -->
+    <canvas id="petal-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-2xl bg-bc-blue flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+                    <i class="fa-solid fa-sparkles text-bc-gold"></i>
+                </div>
+                <div>
+                    <span class="font-display font-bold text-xl tracking-wide text-bc-blue">SEKAI <span class="text-bc-gold">BELLEVUE</span></span>
+                    <span class="block text-[10px] tracking-widest text-bc-muted uppercase font-medium">Bellevue College • Cosplay Club</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-bc-textdark">
+                <a href="#home" class="hover:text-bc-blue transition-colors">Home</a>
+                <a href="#about" class="hover:text-bc-blue transition-colors">About Us</a>
+                <a href="#events" class="hover:text-bc-blue transition-colors">Events</a>
+                <a href="#team" class="hover:text-bc-blue transition-colors">Team</a>
+                <a href="#parking" class="hover:text-bc-blue transition-colors flex items-center gap-1.5 text-bc-blue font-semibold"><i class="fa-solid fa-map-location-dot"></i> Campus Parking Guide</a>
+                <a href="#follow" class="hover:text-bc-blue transition-colors">Connect</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#follow" class="px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase bg-bc-blue text-white shadow-md hover:bg-bc-blue/90 transition-all">
+                    Join Club
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-bc-blue text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
